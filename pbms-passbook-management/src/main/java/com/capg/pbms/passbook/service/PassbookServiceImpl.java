@@ -14,10 +14,12 @@ import com.capg.pbms.passbook.model.Transaction;
 public class PassbookServiceImpl implements IPassbookService {
 @Autowired
 private RestTemplate restTemplate;
+    
 	@Override
 	public List<Transaction> getAllTransactions() {
 		ResponseEntity<List<Transaction>> passbook=restTemplate.exchange("http://PBMS-TRANSACTION-MANAGEMENT/transaction/getAll", HttpMethod.GET,null,new ParameterizedTypeReference<List<Transaction>>() {
 		});
+		
 		return passbook.getBody();
 	}
 	@Override

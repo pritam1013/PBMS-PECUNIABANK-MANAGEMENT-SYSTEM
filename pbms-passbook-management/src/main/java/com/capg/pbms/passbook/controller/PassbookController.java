@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.capg.pbms.passbook.model.Transaction;
 import com.capg.pbms.passbook.service.IPassbookService;
 @RestController
-
 @RequestMapping("/passbook")
+
+//PassBook Controller for accessing the service methods
+
 public class PassbookController {
 	@Autowired
 	private IPassbookService passbookService;

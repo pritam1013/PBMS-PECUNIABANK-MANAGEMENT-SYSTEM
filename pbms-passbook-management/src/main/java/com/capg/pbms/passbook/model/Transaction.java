@@ -28,7 +28,7 @@ public class Transaction {
 	@OneToOne(cascade = {CascadeType.ALL})
 	private Cheque chequeDetails;
 	
-
+    //Setters and Getters
 	public Cheque getChequeDetails() {
 		return chequeDetails;
 	}
@@ -89,6 +89,7 @@ public class Transaction {
 		this.transClosingBalance = transClosingBalance;
 	}
 
+	//parameterised constructor
 	public Transaction(long transAccountNumber, int transactionId, double currentBalance, double transactionAmount,
 			LocalDateTime transactionDate, double transClosingBalance) {
 		super();

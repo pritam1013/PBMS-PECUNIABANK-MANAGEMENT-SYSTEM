@@ -28,6 +28,7 @@ public class BankAccountDetails {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	//parameterised constructor
 	public BankAccountDetails(long accNumber, String accountType, double accountInterest, double accountBalance,
 			String accountBranchId, String customerName, long customerPhno, String accStatus, long customerAdharId,
 			String customerPancard, LocalDate customerDob, String customerGender) {
@@ -46,6 +47,8 @@ public class BankAccountDetails {
 		this.customerGender = customerGender;
 		//this.customerAddress = customerAddress;
 	}
+	
+	//Setters and Getters
 	public String getAccountType() {
 		return accountType;
 	}

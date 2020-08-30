@@ -25,6 +25,8 @@ public class Cheque {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	//parameterised constructor
 	public Cheque(int chequeId, double currentBalance, double chequeAmount, LocalDate chequeIssueDate,
 			double chequeClosingBalance, String chequeHolderName, long debitAccNum) {
 		super();
@@ -36,9 +38,10 @@ public class Cheque {
 		this.chequeHolderName = chequeHolderName;
 		this.debitAccNum = debitAccNum;
 	}
-	/**
-	 * @return the chequeId
-	 */
+	
+	
+	//Setters and Getters
+	
 	public int getChequeId() {
 		return chequeId;
 	}
