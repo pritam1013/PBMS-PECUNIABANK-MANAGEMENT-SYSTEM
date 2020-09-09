@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.capg.pbms.passbook.exception.AccountNotFound;
 import com.capg.pbms.passbook.model.Transaction;
 import com.capg.pbms.passbook.service.IPassbookService;
 @RestController
@@ -17,22 +18,31 @@ import com.capg.pbms.passbook.service.IPassbookService;
 //PassBook Controller for accessing the service methods
 
 public class PassbookController {
+	
 	@Autowired
 	private IPassbookService passbookService;
+	//it calls getAllTransactions method from service layer which is autowired using passbookserivce object
+	
 	@GetMapping("/getalltransactions")
 	public List<Transaction> getAllTransactions()
-	{
-	return passbookService.getAllTransactions();
-	}
+	    {
+			return passbookService.getAllTransactions();
+	    }
+	
+	//it calls gettransactionbyid method from service layer which is autowired using passbookserivce object
+	
 	@GetMapping("/gettransactionbyid/transactionId/{transactionId}")
-	public Transaction getTransactionByTransactionId(@PathVariable int transactionId)
-	{
-		return passbookService.getTransactionByTransactionId(transactionId);
-	}
+	public Transaction getTransactionByTransactionId(@PathVariable int transactionId) throws AccountNotFound
+		{
+			return passbookService.getTransactionByTransactionId(transactionId);
+		}
+	
+	//it calls getalltransactions by accountnumber method from service layer which is autowired using passbookserivce object
+	
 	@GetMapping("/getalltransactions/{accNumber}")
 	public List<Transaction> getAllTransactions(@PathVariable ("accNumber") long accNumber)
-	{
-	return passbookService.getTrasactionByAccountNumber(accNumber);
-	}
-
+		{
+			return passbookService.getTrasactionByAccountNumber(accNumber);
+		}
+	
 }

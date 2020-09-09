@@ -14,11 +14,8 @@ import com.capg.pbms.passbook.exception.ChequeBounceException;
 import com.capg.pbms.passbook.exception.InsufficienBalanceException;
 import com.capg.pbms.passbook.model.ErrorResponse;
 
-/*******************************************************************************************************************************
--Author                   :     P.AkashPawar
--Created/Modified Date    :     23-08-2020
--Description              :     ErrorController Class for handling Transaction Management System Exceptions
-*******************************************************************************************************************************/
+/*ErrorController Class for handling Transaction Management System Exceptions*/
+
 @RestControllerAdvice
 public class ErrorController {
 	@ResponseStatus(code = HttpStatus.CREATED)
